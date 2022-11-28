@@ -1,1 +1,1 @@
-# jap_study_info
+# jpa_study_info
