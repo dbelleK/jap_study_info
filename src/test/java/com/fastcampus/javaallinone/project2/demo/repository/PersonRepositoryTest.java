@@ -27,6 +27,7 @@ class PersonRepositoryTest {
         person.setName("martin");
         person.setAge(10);
         person.setBloodType("A");
+        //person.isBlock();
 
         personRepository.save(person);
 

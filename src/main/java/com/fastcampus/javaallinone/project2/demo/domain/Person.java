@@ -5,6 +5,8 @@ import lombok.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import java.time.LocalDate;
 
 @Entity
 //@Getter
@@ -40,6 +42,9 @@ public class Person {
 
     @ToString.Exclude
     private String phoneNumber;
+
+    @OneToOne
+    private Block block;
 
     //hascode는 다르지만 문자열이 같아면 true 반환
 /*    public boolean equals(Object object){
