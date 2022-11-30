@@ -1,6 +1,8 @@
 package com.fastcampus.javaallinone.project2.demo.domain;
 
+import com.fastcampus.javaallinone.project2.demo.dto.Birthday;
 import lombok.*;
+import org.springframework.validation.annotation.Validated;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -33,7 +35,9 @@ public class Person {
 
     private String address;
 
-    private String birthday;
+    //@Valid
+    @Embedded
+    private Birthday birthday;
 
     private String job;
 
@@ -44,25 +48,6 @@ public class Person {
     @ToString.Exclude
     private Block block;
 
-    //hascode는 다르지만 문자열이 같아면 true 반환
-/*    public boolean equals(Object object){
-        if(object == null){
-            return false;
-        }
-        Person person = (Person) object;
-
-        if(!person.getName().equals(this.getName())){
-            return false;
-        }
-        if(person.getAge() != this.getAge()){
-            return false;
-        }
-        return true;
-    }
-
-    public int hashCode(){
-        return (name+age).hashCode();
-    }*/
 
 
 }
